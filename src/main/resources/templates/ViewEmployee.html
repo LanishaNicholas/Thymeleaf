@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee List</title>
+<style type="text/css">
+	body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination span {
+            margin: 0 5px;
+        }
+        .pagination a {
+            text-decoration: none;
+            color: blue;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .pagination a:hover {
+            background-color: #ddd;
+        }
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Employee Name</th>
+			<th>Job</th>
+			<th>Salary</th>
+		</tr>
+		<tr th:each="employee : ${emp.content}">
+			<td th:text="${employee.empid}"></td>
+			<td th:text="${employee.empname}"></td>
+			<td th:text="${employee.job}"></td>
+			<td th:text="${employee.salary}"></td>
+		</tr>
+	</table>
+	<div th:if="${emp.totalPages > 1}" class="pagination">
+        <span th:each="pageNumber : ${#numbers.sequence(0, emp.totalPages - 1)}">
+            <a th:href="@{|/employees?page=${pageNumber}|}" th:text="${pageNumber + 1}"></a>
+        </span>
+    </div>
+</body>
+</html>

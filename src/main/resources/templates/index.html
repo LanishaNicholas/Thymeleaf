@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href=@{/css/style.css}>
+</head>
+<body>
+	<h1>Variable expression</h1>
+	<p th:text="${usermodel.name}"></p>
+	<p th:text="${usermodel.email}"></p>
+	
+	<h1>Selection Expression</h1>
+	<div th:object=${usermodel}>
+		<p th:text=*{name}>
+		<p th:text=*{email}>
+	</div>
+	
+	<h1>Link Expression</h1>
+	<a th:href="@{/home}">Click me</a>
+	
+	<h1>Message expression</h1>
+	<p th:text="#{welcome.message}">
+</body>
+</html>

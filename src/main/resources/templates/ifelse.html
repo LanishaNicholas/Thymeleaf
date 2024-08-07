@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Thymeleaf if else condition</h2>
+	<p th:text="${number}"></p>
+	<div th:if="${number>0}">
+		<p>Number is positive</p>
+	</div>
+	<div th:unless="${number>0}">
+		<p>Number is negative</p>	
+	</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.error{
+		color:red;
+	}
+</style>
+</head>
+<body>
+	<form th:action="@{/processForm}" method="POST" th:object="${person}">
+		Name: <input type="text" name="name" th:field="*{name}">
+		<span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+		<br><br>
+		Email: <input type="text" name="email" th:field="*{email}">
+		<span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+		<br><br>
+		Phone: <input type="text" name="phone" th:field=*{phone}>
+		<span class="error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+		<br><br>
+		Age: <input type="text" name="age" th:field="*{age}">
+		<span class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+		<br><br>
+		
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

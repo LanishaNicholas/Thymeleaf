@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<style type="text/css">
+		#div1{
+			border:1px solid;
+			padding:2px;
+			background-color:green;
+			color:white;
+		}
+		
+		#div2{
+			border:1px solid;
+			padding:2px;
+			background-color:blue;
+		}
+	</style>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="div1" th:insert="~{header::head}" ></div>
+	<h1>Home page</h1>
+	<div id="div2" th:replace="~{footer::foot}"></div>
+</body>
+</html>

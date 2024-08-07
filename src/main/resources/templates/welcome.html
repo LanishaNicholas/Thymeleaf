@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul th:each="cr:${car}">
+		<li th:text="${cr}"></li>
+	</ul>
+	
+	<h2>Thymeleaf using array iteration</h2>
+	<h3>Using index</h3>
+	<ol>
+		<li th:text="${planet[0]}"></li>
+		<li th:text="${planet[1]}"></li>
+		<li th:text="${planet[2]}"></li>
+		<li th:text="${planet[3]}"></li>
+		<li th:text="${planet[4]}"></li>
+		<li th:text="${planet[5]}"></li>
+		<li th:text="${planet[6]}"></li>
+		<li th:text="${planet[7]}"></li>
+	</ol>
+	
+	<h3>By using each method</h3>
+	<ul th:each="pl:${planet}">
+		<li th:text="${pl}"></li>
+	</ul>
+</body>
+</html>
